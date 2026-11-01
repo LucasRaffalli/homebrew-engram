@@ -2,6 +2,8 @@
 
 Le tap Homebrew de Lucas Raffalli : mes apps pour macOS, installées en une commande.
 
+**Toutes mes apps : [app.lucasraffalli.com](https://app.lucasraffalli.com)**
+
 ## Installer
 
 ```bash
@@ -17,7 +19,7 @@ brew install --cask lucasraffalli/engram/kairos
 | App | À quoi ça sert | Installer |
 | --- | --- | --- |
 | **[Kairos](https://github.com/LucasRaffalli/kairos)** | Un chronomètre dans la barre de menus : tu lances un lot sur une tâche, il compte, et le soir la journée est prête à saisir. | `brew install --cask lucasraffalli/engram/kairos` |
-| **Charon** | Un client SFTP et FTP natif : un onglet par serveur, avec son terminal, ses transferts et son éditeur. | `brew install --cask lucasraffalli/engram/charon` |
+| **[Charon](https://app.lucasraffalli.com/charon)** | Un client SFTP et FTP natif : un onglet par serveur, avec son terminal, ses transferts et son éditeur. | `brew install --cask lucasraffalli/engram/charon` |
 
 Apple Silicon uniquement.
 
