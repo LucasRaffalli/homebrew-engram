@@ -1,17 +1,18 @@
 {
   // Le Worker des releases de toutes les apps. Déployé depuis ce dossier :
   //   cd infra/release-worker && npx wrangler deploy
+  // Il s'appelle « engram » : c'est le nom du Worker déjà en ligne, ne pas le changer
+  // (un autre nom créerait un second Worker).
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "engram-releases",
+  "name": "engram",
   "main": "index.js",
   "compatibility_date": "2026-10-01",
   "r2_buckets": [{ "binding": "RELEASES", "bucket_name": "engram-releases" }],
   "routes": [
+    // Une route par app : tout ce qui n'est pas listé ici ne passe jamais par le Worker.
+    // Les garder toutes : wrangler aligne les routes du Worker sur cette liste.
+    { "pattern": "release.lucasraffalli.com/kairos/*", "zone_name": "lucasraffalli.com" },
     // Charon : l'URL de son updater ne change pas.
     { "pattern": "release.lucasraffalli.com/charon/*", "zone_name": "lucasraffalli.com" },
-    // Kairos : à activer au moment de sa migration (voir README.md). Tant que
-    // la route /kairos/* est sur l'ancien Worker « kairos-releases », ne pas la
-    // déclarer ici : une route ne peut viser qu'un Worker.
-    // { "pattern": "release.lucasraffalli.com/kairos/*", "zone_name": "lucasraffalli.com" }
   ],
 }
